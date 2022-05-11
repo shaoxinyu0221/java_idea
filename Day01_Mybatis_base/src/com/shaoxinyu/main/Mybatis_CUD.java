@@ -35,7 +35,7 @@ public class Mybatis_CUD {
     /**
      * 改-update
      */
-    @Test
+
     public void testUpdate(){
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);
@@ -49,7 +49,7 @@ public class Mybatis_CUD {
     /**
      * 删-delete
      */
-    @Test
+
     public void testDelete(){
         SqlSession sqlSession = MybatisUtil.getSqlSession();
         UserDao userDao = sqlSession.getMapper(UserDao.class);

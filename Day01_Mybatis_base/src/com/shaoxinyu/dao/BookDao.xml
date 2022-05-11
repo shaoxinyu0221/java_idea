@@ -20,7 +20,15 @@
         insert into t_book(book_name, book_desp, book_price) values(#{bookName},#{bookDesp},#{bokPrice});
     </insert>
 
-    <select id="queryAll" resultType="com.shaoxinyu.entity.Book">
+    <select id="queryById" resultType="com.shaoxinyu.entity.Book">
         select * from t_book where id = #{id};
     </select>
+
+    <update id="updateBook">
+        update t_book set book_name=#{bookName},book_desp=#{bookDesp},book_price=#{bookPrice} where id = #{id};
+    </update>
+
+    <delete id="deleteBook">
+        delete from t_book where id = #{id};
+    </delete>
 </mapper>

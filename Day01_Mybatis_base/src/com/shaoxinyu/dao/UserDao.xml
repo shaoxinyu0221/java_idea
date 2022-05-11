@@ -38,4 +38,8 @@
     <select id="queryAll" resultType="com.shaoxinyu.entity.User">
         select * from t_user;
     </select>
+
+    <select id="queryByUsername" resultType="com.shaoxinyu.entity.User">
+        select * from t_user where username = #{username};
+    </select>
 </mapper>

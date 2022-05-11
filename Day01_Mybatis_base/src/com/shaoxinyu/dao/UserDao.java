@@ -26,4 +26,11 @@ public interface UserDao {
      * @return 返回一个集合
      */
     ArrayList<User> queryAll();
+
+    /**
+     * 查询账号是否存在
+     * @param username 要查询的账号
+     * @return 返回一个user对象
+     */
+    User queryByUsername(@Param("username")String username);
 }
