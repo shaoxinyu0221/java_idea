@@ -3,6 +3,7 @@ package com.shaoxinyu.lesson01;
 import com.shaoxinyu.dao.BookJdbc;
 import com.shaoxinyu.entity.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Test {
@@ -19,5 +20,15 @@ public class Test {
         for (User user : query){
             System.out.println(user.getUsername());
         }
+
+        List<Integer> list = new ArrayList<Integer>();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        for (int i=0;i<list.size();i++){
+            System.out.println(list.get(i));
+        }
+
     }
 }

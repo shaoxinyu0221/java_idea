@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    namespace填的要执行的接口的全类名
+-->
+<mapper namespace="com.shaoxinyu.dao.BookDao">
+    <!--
+        id填要执行的接口中的方法名
+        parameterType 代表参数类型,填参数的全类名
+        useGeneratedKeys 表示主键回填功能,true表示开启,false表示关闭
+        keyProperty 表示要把回填的值赋值给哪个属性
+      -->
+    <select id="queryAll" resultType="com.shaoxinyu.entity.Book">
+        select * from t_book;
+    </select>
+</mapper>
