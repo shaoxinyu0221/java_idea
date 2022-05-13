@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.product.dao.ProductDao">
+
+
+    <delete id="deleteProduct">
+        delete from product where id=#{id};
+    </delete>
+
+
+    <resultMap id="queryUserByPNameMap" type="com.product.entity.Product">
+        <id column="cid" property="id"></id>
+        <result column="p_name" property="pName"></result>
+        <result column="p_price" property="pPrice"></result>
+        <collection property="userList" ofType="com.product.entity.User">
+            <id column="id" property="id"></id>
+            <result column="username" property="username"></result>
+            <result column="age" property="age"></result>
+            <result column="money" property="money"></result>
+        </collection>
+
+    </resultMap>
+
+    <select id="queryUserByPName" resultMap="queryUserByPNameMap">
+        select user.*,product.*,cart.*,product.id as cid
+        from user,product,cart where user.id=cart.u_id and product.id=cart.p_id and product.p_name=#{pName};
+    </select>
+
+</mapper>
