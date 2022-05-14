@@ -6,7 +6,6 @@ import com.product.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
-import java.util.List;
 
 public class ProductService {
 
@@ -36,4 +35,6 @@ public class ProductService {
         System.out.println(product);
         sqlSession.close();
     }
+
+
 }
