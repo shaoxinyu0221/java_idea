@@ -4,6 +4,7 @@ import com.shaoxinyu.dao.UserDao;
 import com.shaoxinyu.entity.User;
 import com.shaoxinyu.util.JdbcUtil;
 
+import java.util.List;
 import java.util.Map;
 
 public class UserService {
@@ -16,9 +17,10 @@ public class UserService {
 //        System.out.println(insert);
 //        boolean update = userDao.update(user02);
 //        System.out.println(update);
-        for (User user1 : userDao.query()) {
-            System.out.println(user1);
-        }
+        List<User> query = userDao.query();
+        query.forEach(e -> {
+            System.out.println(e);
+        });
 //        for (Map<String, Object> stringObjectMap : userDao.queryMore()) {
 //            System.out.println(stringObjectMap);
 //        }

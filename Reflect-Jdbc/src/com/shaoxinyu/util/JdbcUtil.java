@@ -134,29 +134,23 @@ public class JdbcUtil {
             }
             rs = pst.executeQuery();
             while (rs.next()){
-                try {
-                    //创建一个对象存储数据
-                    T t = clazz.newInstance();
-                    //获取对象的属性
-
-                    //根据属性名进行查询
-                     for(int i=0;i<rs.getMetaData().getColumnCount();i++){
-                        String setField = "set"+rs.getMetaData().getColumnLabel(i).substring(0,1).toUpperCase()+rs.getMetaData().getColumnLabel(i).substring(1);
-                        Field field = clazz.getDeclaredField(rs.getMetaData().getColumnLabel(i));
-                        Method declaredMethodSet = clazz.getDeclaredMethod(setField, field.getType());
-                        declaredMethodSet.invoke(t,setField);
-                    }
-
-
-                    //向数组中添加对象
-                    list.add(t);
-
-                } catch (Exception e) {
-                    e.printStackTrace();
+                //创建对象
+                T t = clazz.newInstance();
+                for(int i = 1;i<=rs.getMetaData().getColumnCount();i++){
+                    String columnLabel = rs.getMetaData().getColumnLabel(i);
+                    //写set方法
+                    String setMethod = "set" + columnLabel.substring(0, 1).toUpperCase() + columnLabel.substring(1);
+                    //获取对应属性
+                    Field field = clazz.getDeclaredField(columnLabel);
+                    //获取set方法
+                    Method declaredMethod = clazz.getDeclaredMethod(setMethod, field.getType());
+                    //调方法
+                    declaredMethod.invoke(t, rs.getObject(i));
                 }
+                list.add(t);
             }
             return list;
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }finally {
             closeAll(connect, pst, rs);
@@ -193,5 +187,6 @@ public class JdbcUtil {
         return null;
     }
 
-
 }
+
+
