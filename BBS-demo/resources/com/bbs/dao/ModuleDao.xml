@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bbs.dao.ModuleDao">
+
+<!--    <select id="queryModuleById" resultType="Module">-->
+<!--        select module.name,module.description,user.account,user.email,user.regtime-->
+<!--        from module,user where module.master=user.id and module.id=#{id}-->
+<!--    </select>-->
+
+    <resultMap id="ModuleUserMap" type="Module">
+        <id column="id" property="id"></id>
+        <result column="name" property="name"/>
+        <result column="description" property="description" />
+        <association property="user" javaType="com.bbs.entity.User">
+            <result column="nickname" property="nickname" />
+            <result column="email" property="email" />
+            <result column="regtime" property="regtime" />
+        </association>
+
+    </resultMap>
+
+    <select id="queryModuleById" resultMap="ModuleUserMap">
+        select module.name,module.description,user.account,user.email,user.regtime
+        from module,user where module.master=user.id and module.id=1
+    </select>
+
+    <resultMap id="ModuleMainMap" type="Module">
+        <id column="mid" property="id"></id>
+        <result column="name" property="name"/>
+        <result column="description" property="description" />
+        <collection property="mainList" ofType="com.bbs.entity.Main">
+            <id column="id" property="id"></id>
+            <result column="title" property="title" />
+            <result column="content" property="content" />
+            <result column="addtime" property="addtime" />
+            <result column="viewnum" property="viewnum" />
+            <result column="nickname" property="nickname" />
+        </collection>
+    </resultMap>
+
+    <select id="queryModuleMainById" resultMap="ModuleMainMap">
+        select module.id mid,module.name,module.description,main.id,main.title,main.content,user.nickname from module,main,user
+        where main.module=module.id and main.author=user.id and module.id=#{id};
+    </select>
+</mapper>
