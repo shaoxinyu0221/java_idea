@@ -19,5 +19,6 @@ public interface CategoryDao {
 
     Category queryById(@Param("id") Integer id);
 
+
     List<Category> queryAll();
 }

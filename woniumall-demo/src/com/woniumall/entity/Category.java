@@ -5,6 +5,8 @@ public class Category {
     private Integer id;
     private String name;
     private String status;
+    public static final String NORMAL = "1";
+    public static final String UNABLE = "0";
 
     public Integer getId() {
         return id;
@@ -39,6 +41,9 @@ public class Category {
     public Category(String name, String status) {
         this.name = name;
         this.status = status;
+    }
+
+    public Category() {
     }
 
     @Override
