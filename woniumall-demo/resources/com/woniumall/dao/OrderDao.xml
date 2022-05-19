@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.woniumall.dao.OrderDao">
+
+    <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+        insert into mall_order
+        (no, userid, ordertime, paytype, paytime, receivetime,
+         accept, telephone, address, totalmoney, status)
+        values (#{no},#{userid},#{orderTime},#{payType},#{payTime},#{receiveTime},
+                #{accept},#{telephone},#{address},#{totalMoney},#{status});
+    </insert>
+
+
+    <resultMap id="orderMap" type="Order">
+        <id column="moid" property="id"/>
+        <result column="no" property="no"/>
+        <result column="userid" property="userid"/>
+        <result column="ordertime" property="orderTime"/>
+        <result column="paytime" property="payTime" />
+        <result column="receivetime" property="receiveTime" />
+        <result column="accept" property="accept" />
+        <result column="telephone" property="telephone" />
+        <result column="address" property="address" />
+        <result column="totalmoney" property="totalMoney" />
+        <result column="status" property="status" />
+        <collection property="orderItemList" ofType="OrderItem">
+            <id column="id" property="id"/>
+            <result column="orderid" property="orderId"/>
+            <result column="goodsid" property="goodsId"/>
+            <result column="num" property="num"/>
+            <result column="price" property="price"/>
+        </collection>
+    </resultMap>
+
+    <select id="getById" resultMap="orderMap">
+        select mo.id moid,mo.no,mo.userid,mo.ordertime,mo.paytime,
+               mo.receivetime,mo.accept,mo.telephone,mo.address,mo.totalmoney,mo.status,moi.*
+        from mall_order mo,mall_order_item moi where mo.id = moi.orderid and mo.id=#{id};
+    </select>
+</mapper>

@@ -8,4 +8,5 @@ public interface ModuleDao {
 
     Module queryModuleMainById(Integer id);
 
+    Integer addModule(Module module);
 }

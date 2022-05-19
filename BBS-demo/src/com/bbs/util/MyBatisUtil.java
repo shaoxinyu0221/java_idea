@@ -11,6 +11,7 @@ import java.io.InputStream;
 public class MyBatisUtil {
 
     private static SqlSessionFactory factory = null;
+    private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<>();
 
     static {
         try(InputStream input = Resources.getResourceAsStream("mybatis-config.xml");) {
@@ -26,7 +27,12 @@ public class MyBatisUtil {
      * @return 返回一个sqlsession
      */
     public static SqlSession getSqlSession(){
-        return factory.openSession();
+        SqlSession sqlSession = threadLocal.get();
+        if(sqlSession == null){
+            sqlSession = factory.openSession();
+            threadLocal.set(sqlSession);
+        }
+        return sqlSession;
     }
 
     /**
@@ -36,6 +42,7 @@ public class MyBatisUtil {
     public static void close(SqlSession sqlSession){
         if(sqlSession != null){
             sqlSession.close();
+            threadLocal.remove();
         }
     }
 

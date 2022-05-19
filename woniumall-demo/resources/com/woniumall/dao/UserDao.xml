@@ -8,8 +8,17 @@
         values (#{account},#{regTime},#{score},#{password},#{avatar},#{email},#{money},#{status})
     </insert>
 
+    <update id="updateScoreById">
+        update mall_user set score=#{score} where id=#{id}
+    </update>
+
 
     <select id="queryUserToLogin" resultType="User">
         select * from mall_user where account=#{account} and password=#{password}
+    </select>
+
+
+    <select id="queryById" resultType="com.woniumall.entity.User">
+        select * from mall_user where id=#{id}
     </select>
 </mapper>

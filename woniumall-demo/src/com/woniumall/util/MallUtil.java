@@ -14,5 +14,12 @@ public class MallUtil {
         return format;
     }
 
+    /**
+     * 获取订单no
+     */
+    public static String getNo(){
+        String no = "BOOK" + (int)(Math.random()*1000);
+        return no;
+    }
 
 }

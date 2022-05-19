@@ -56,4 +56,10 @@ public class UserDaoTest {
     }
 
 
+    @Test
+    public void queryById(){
+        User user = userDao.queryById(1);
+        System.out.println(user);
+    }
+
 }

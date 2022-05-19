@@ -20,6 +20,9 @@
         </association>
 
     </resultMap>
+    <insert id="addModule">
+        insert into module(name,description,master) values(#{name},#{description},#{master})
+    </insert>
 
     <select id="queryModuleById" resultMap="ModuleUserMap">
         select module.name,module.description,user.account,user.email,user.regtime

@@ -26,6 +26,9 @@
                               salenum=#{saleNum},remarknum=#{remarkNum},remarkscore=#{remarkScore},status=#{status}
         where id=#{id}
     </update>
+    <update id="updateStockByid">
+        update mall_goods set stock=#{stock} where id=#{id}
+    </update>
 
     <select id="queryById" resultType="Goods">
         select * from mall_goods where id=#{id}

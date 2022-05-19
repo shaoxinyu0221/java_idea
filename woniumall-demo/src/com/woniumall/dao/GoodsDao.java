@@ -17,4 +17,6 @@ public interface GoodsDao {
 
     Integer update(Goods goods);
 
+
+    Integer updateStockByid(@Param("id") Integer id, @Param("stock") Integer stock);
 }

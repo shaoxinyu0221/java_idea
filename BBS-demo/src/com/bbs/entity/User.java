@@ -13,7 +13,7 @@ public class User {
     private Integer replaynums;
     private String regtime;
     private String role;
-
+    public static final String MASTER = "0";
 
 
     public Integer getId() {

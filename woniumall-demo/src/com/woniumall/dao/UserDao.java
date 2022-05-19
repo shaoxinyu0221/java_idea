@@ -9,5 +9,7 @@ public interface UserDao {
 
     Integer insert(User user);
 
+    User queryById(Integer id);
 
+    Integer updateScoreById(@Param("id") Integer id, @Param("score") Integer score);
 }

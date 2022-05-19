@@ -22,6 +22,7 @@
         <result column="addtime" property="addTime"></result>
         <result column="ischecked" property="isChecked"></result>
         <association property="goods" javaType="Goods">
+            <id column="goodsid" property="id"></id>
             <result column="name" property="name"/>
             <result column="img" property="img" />
             <result column="saleprice" property="salePrice" />
