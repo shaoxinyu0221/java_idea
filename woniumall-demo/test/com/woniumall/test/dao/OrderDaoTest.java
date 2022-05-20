@@ -76,12 +76,6 @@ public class OrderDaoTest {
     @Test
     public void getByIdStep(){
         Order order = orderDao.getByIdStepOne(2);
-        for (OrderItem orderItem : order.getOrderItemList()) {
-            User user = order.getUser();
-            Goods goods = orderItem.getGoods();
-            System.out.println(order.getId()+"\t"+order.getOrderTime()+"\t"+
-                    order.getAccept()+"\t"+order.getAddress()+"\t"+orderItem.getNum()+"\t"+
-                    orderItem.getPrice()+"\t"+goods.getName()+"\t"+goods.getImg()+"\t"+user.getAccount());
-        }
+        System.out.println(order.getOrderTime());
     }
 }
