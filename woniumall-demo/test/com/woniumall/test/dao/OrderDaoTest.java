@@ -1,7 +1,10 @@
 package com.woniumall.test.dao;
 
 import com.woniumall.dao.OrderDao;
+import com.woniumall.entity.Goods;
 import com.woniumall.entity.Order;
+import com.woniumall.entity.OrderItem;
+import com.woniumall.entity.User;
 import com.woniumall.util.MallUtil;
 import com.woniumall.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -10,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 public class OrderDaoTest {
 
@@ -48,8 +52,36 @@ public class OrderDaoTest {
 
     @Test
     public void queryListById(){
-        Order byId = orderDao.getById(1);
-        System.out.println(byId);
+        Order order = orderDao.getById(2);
+        for (OrderItem orderItem : order.getOrderItemList()) {
+            User user = order.getUser();
+            Goods goods = orderItem.getGoods();
+            System.out.println(order.getId()+"\t"+order.getOrderTime()+"\t"+
+                    order.getAccept()+"\t"+order.getAddress()+"\t"+orderItem.getNum()+"\t"+
+                    orderItem.getPrice()+"\t"+goods.getName()+"\t"+goods.getImg()+"\t"+user.getAccount());
+        }
+
     }
 
+
+    @Test
+    public void queryByStep(){
+        for (Order order : orderDao.getByOrderIdToUserStepOne(1)) {
+            System.out.println(order);
+        }
+
+    }
+
+
+    @Test
+    public void getByIdStep(){
+        Order order = orderDao.getByIdStepOne(2);
+        for (OrderItem orderItem : order.getOrderItemList()) {
+            User user = order.getUser();
+            Goods goods = orderItem.getGoods();
+            System.out.println(order.getId()+"\t"+order.getOrderTime()+"\t"+
+                    order.getAccept()+"\t"+order.getAddress()+"\t"+orderItem.getNum()+"\t"+
+                    orderItem.getPrice()+"\t"+goods.getName()+"\t"+goods.getImg()+"\t"+user.getAccount());
+        }
+    }
 }

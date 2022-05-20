@@ -75,7 +75,13 @@
         from mall_goods as g,mall_category as c where g.categoryid=c.id
     </select>
 
-<!--    <select id="queryAll" resultMap="GoodsMap">-->
+
+
+    <select id="getByIdStepFour" resultType="com.woniumall.entity.Goods">
+        select mg.name,mg.img from mall_goods mg where id=#{goodsId}
+    </select>
+
+    <!--    <select id="queryAll" resultMap="GoodsMap">-->
 <!--        select <include refid="GoodsColumns" />, c.*-->
 <!--        from mall_goods as g,mall_category as c where g.categoryid=c.id-->
 <!--    </select>-->

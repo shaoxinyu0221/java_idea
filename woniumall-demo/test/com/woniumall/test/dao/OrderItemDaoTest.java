@@ -47,7 +47,6 @@ public class OrderItemDaoTest {
         for (OrderItem orderItem : orderItemDao.getByOrderId(1)) {
             System.out.println(orderItem);
         }
-
     }
 
 }

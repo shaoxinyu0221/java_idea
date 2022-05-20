@@ -21,4 +21,17 @@
     <select id="queryById" resultType="com.woniumall.entity.User">
         select * from mall_user where id=#{id}
     </select>
+
+
+    <select id="getByOrderIdToUserStepTwo" resultType="User">
+        select user.id uid, account, regtime, score,
+               password, avatar, email, money, user.status userstatus
+        from mall_user user where id=#{id}
+    </select>
+
+
+    <select id="getByIdSteptwo" resultType="User">
+        select ms.account from mall_user ms where id=#{userId}
+    </select>
+
 </mapper>

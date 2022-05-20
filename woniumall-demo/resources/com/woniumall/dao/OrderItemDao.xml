@@ -25,7 +25,21 @@
     <select id="getByOrderId" resultMap="orderItemGoodsMap">
         select moi.id,moi.num,moi.price,mg.name,mg.no,mg.publisher,mg.publishtime,mg.img
         from mall_order_item moi,mall_goods mg
-        where moi.goodsid = mg.id and orderid=#{id};
+        where moi.goodsid = mg.id and orderid=#{orderId};
+    </select>
+
+
+    <resultMap id="getByIdStepThreeMap" type="OrderItem">
+        <id column="id" property="id"/>
+        <result column="num" property="num"/>
+        <result column="price" property="price"/>
+        <association property="goods" select="com.woniumall.dao.GoodsDao.getByIdStepFour" column="goodsid">
+            <result column="name" property="name"/>
+            <result column="img" property="img" />
+        </association>
+    </resultMap>
+    <select id="getByIdStepThree" resultMap="getByIdStepThreeMap">
+        select moi.num,moi.price,goodsid from mall_order_item moi where orderid=#{orderId}
     </select>
 
 </mapper>
