@@ -13,6 +13,17 @@
     </insert>
 
 
+    <insert id="addLosOfOrders">
+        insert into mall_order
+        (no, userid, ordertime, paytype, paytime, receivetime,
+         accept, telephone, address, totalmoney, status) values
+        <foreach collection="list" item="order" separator=",">
+            (#{order.no},#{order.userid},#{order.orderTime},#{order.payType},#{order.payTime},#{order.receiveTime},
+            #{order.accept},#{order.telephone},#{order.address},#{order.totalMoney},#{order.status})
+        </foreach>
+    </insert>
+
+
     <resultMap id="orderMap" type="Order">
         <id column="moid" property="id"/>
         <result column="no" property="no"/>
@@ -88,4 +99,7 @@
     <select id="getByIdStepOne" resultMap="orderStepMap">
         select mo.id moid,ordertime,accept,address,userid from mall_order mo where mo.id=#{id}
     </select>
+
+
+
 </mapper>

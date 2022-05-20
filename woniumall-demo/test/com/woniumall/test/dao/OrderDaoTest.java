@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.math.BigDecimal;
+import java.util.Arrays;
 import java.util.List;
 
 public class OrderDaoTest {
@@ -77,5 +78,24 @@ public class OrderDaoTest {
     public void getByIdStep(){
         Order order = orderDao.getByIdStepOne(2);
         System.out.println(order.getOrderTime());
+    }
+
+    @Test
+    public void testAddLosOfOrders(){
+        Order order = new Order();
+        order.setNo("order0001");
+        order.setUserid(1);
+        order.setOrderTime(MallUtil.getNow());
+        order.setPayType("0");
+        order.setAccept("海绵宝宝");
+        order.setTelephone("111222333444");
+        order.setAddress("比奇堡");
+        order.setTotalMoney(new BigDecimal("123.4"));
+        order.setStatus("1");
+
+        List<Order> orders = Arrays.asList(order);
+
+        Integer integer = orderDao.addLosOfOrders(orders);
+        System.out.println(integer);
     }
 }

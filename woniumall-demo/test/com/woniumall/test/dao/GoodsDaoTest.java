@@ -4,6 +4,8 @@ import com.woniumall.dao.CategoryDao;
 import com.woniumall.dao.GoodsDao;
 import com.woniumall.entity.Category;
 import com.woniumall.entity.Goods;
+import com.woniumall.entity.Order;
+import com.woniumall.entity.User;
 import com.woniumall.util.MallUtil;
 import com.woniumall.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -94,5 +96,26 @@ public class GoodsDaoTest {
         Integer update = goodsDao.update(goods);
         System.out.println(update);
     }
+
+
+
+    @Test
+    public void testGetByCondition(){
+        Goods goods = new Goods();
+        goods.setName("话说");
+        Goods byCondition = goodsDao.getByCondition(goods);
+        System.out.println(byCondition);
+    }
+
+    @Test
+    public void testUpdateGoods(){
+        Goods goods = new Goods();
+        goods.setId(2);
+        goods.setName("郭德纲相声选");
+        Integer integer = goodsDao.updateSetGoods(goods);
+        System.out.println(integer);
+    }
+
+
 
 }

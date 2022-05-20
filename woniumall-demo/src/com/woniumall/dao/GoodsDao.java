@@ -22,4 +22,9 @@ public interface GoodsDao {
 
 
     Goods getByIdStepFour(Integer goodsId);
+
+    Goods getByCondition(Goods condition);
+
+    Integer updateSetGoods(Goods goods);
+
 }

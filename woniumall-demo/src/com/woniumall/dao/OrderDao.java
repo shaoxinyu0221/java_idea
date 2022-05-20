@@ -15,4 +15,6 @@ public interface OrderDao {
 
     Order getByIdStepOne(Integer id);
 
+    Integer addLosOfOrders(List<Order> order);
+
 }

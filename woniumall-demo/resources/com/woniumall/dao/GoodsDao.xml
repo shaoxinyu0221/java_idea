@@ -69,16 +69,22 @@
         <result column="status" property="status"></result>
     </resultMap>
 
-
     <select id="queryAll" resultType="Goods">
         select g.*, c.name as categoryName
         from mall_goods as g,mall_category as c where g.categoryid=c.id
     </select>
 
-
-
     <select id="getByIdStepFour" resultType="com.woniumall.entity.Goods">
         select mg.name,mg.img from mall_goods mg where id=#{goodsId}
+    </select>
+
+    <select id="getByCondition" resultType="com.woniumall.entity.Goods">
+        select * from mall_goods
+        <where>
+            <if test="name != null and name !=''">
+                and name like concat("%",#{name},"%")
+            </if>
+        </where>
     </select>
 
     <!--    <select id="queryAll" resultMap="GoodsMap">-->
@@ -86,5 +92,13 @@
 <!--        from mall_goods as g,mall_category as c where g.categoryid=c.id-->
 <!--    </select>-->
 
+    <update id="updateSetGoods">
+        update mall_goods
+        <set>
+            <if test="name!=null and name!=''">name = #{name},</if>
+            <if test="no!=null and name!=''">no = #{no},</if>
+        </set>
+        where id = #{id}
+    </update>
 
 </mapper>
