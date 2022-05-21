@@ -8,14 +8,29 @@ public class Main {
     /**
      * 外键user的id
      */
-    private Integer author;
-    private Integer module;
     private String addtime;
     private Integer viewnum;
     private Integer remarknum;
     private String name;
     private String nickname;
+    private Module module;
+    private User user;
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Module getModule() {
+        return module;
+    }
+
+    public void setModule(Module module) {
+        this.module = module;
+    }
 
     public String getName() {
         return name;
@@ -57,22 +72,6 @@ public class Main {
         this.content = content;
     }
 
-    public Integer getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Integer author) {
-        this.author = author;
-    }
-
-    public Integer getModule() {
-        return module;
-    }
-
-    public void setModule(Integer module) {
-        this.module = module;
-    }
-
     public String getAddtime() {
         return addtime;
     }
@@ -103,13 +102,13 @@ public class Main {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", author=" + author +
-                ", Module=" + module +
                 ", addtime='" + addtime + '\'' +
                 ", viewnum=" + viewnum +
                 ", remarknum=" + remarknum +
                 ", name='" + name + '\'' +
                 ", nickname='" + nickname + '\'' +
+                ", module=" + module +
+                ", user=" + user +
                 '}';
     }
 }

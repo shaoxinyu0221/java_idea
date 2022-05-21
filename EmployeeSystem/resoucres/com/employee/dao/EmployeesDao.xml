@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.employee.dao.EmployeesDao">
+
+    <select id="qyerryByDepid" resultType="com.employee.entity.Employees">
+        select id,username,age,sex from employees where depid=#{did};
+    </select>
+
+
+    <insert id="insertEmp">
+        insert into employees(username, age, sex, depid)
+        values (#{username},#{age},#{sex},#{depid});
+    </insert>
+
+</mapper>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.dao.AccountInfoDao">
+
+
+    <resultMap id="AccountMap" type="AccountInfo">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="password" property="password"/>
+        <association property="user" javaType="Users">
+            <result column="username" property="username"/>
+            <result column="sex" property="sex"/>
+            <result column="address" property="address"/>
+            <result column="money" property="money"/>
+            <result column="birthday" property="birthday"/>
+        </association>
+    </resultMap>
+    <select id="getById" resultMap="AccountMap">
+        select accountinfo.id,account,password,
+               username,sex,address,money,birthday
+        from users,accountinfo where users.id=accountinfo.userid
+        and accountinfo.id=#{id}
+    </select>
+</mapper>

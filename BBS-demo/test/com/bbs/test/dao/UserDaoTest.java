@@ -9,6 +9,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class UserDaoTest {
 
     SqlSession sqlSession = null;
@@ -46,11 +48,14 @@ public class UserDaoTest {
         System.out.println(insert);
 
     }
-
     @Test
     public void getById(){
-        User user = userDao.queryById(1);
-        System.out.println(user);
+        List<User> users = userDao.queryById();
+        for (User user : users) {
+            System.out.println(user.getMainList());
+        }
     }
+
+
 
 }

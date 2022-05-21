@@ -11,6 +11,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.List;
+
 public class MainDaoTest {
 
     SqlSession sqlSession = null;
@@ -37,6 +39,13 @@ public class MainDaoTest {
 
     }
 
+    @Test
+    public void testQueryByCondition(){
+        List<Main> mainList = mainDao.queryByCondition(null, "海绵宝宝", null, null, null);
+        for (Main main : mainList) {
+            System.out.println(main.getTitle());
+        }
+    }
 
 
 }

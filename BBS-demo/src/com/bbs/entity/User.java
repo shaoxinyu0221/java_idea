@@ -1,5 +1,7 @@
 package com.bbs.entity;
 
+import java.util.List;
+
 public class User {
 
     private Integer id;
@@ -15,8 +17,17 @@ public class User {
     private String role;
     public static final String MASTER = "0";
 
+    private List<Main> mainList;
 
-    public Integer getId() {
+    public List<Main> getMainList() {
+        return mainList;
+    }
+
+    public void setMainList(List<Main> mainList) {
+        this.mainList = mainList;
+    }
+
+        public Integer getId() {
         return id;
     }
 

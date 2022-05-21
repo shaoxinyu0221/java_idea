@@ -14,4 +14,42 @@
     </select>
 
 
+    <select id="getByAuthor" resultType="Main">
+        select title,content,addtime from main where author = #{author};
+    </select>
+
+    <resultMap id="queryByConditionMap" type="Main">
+        <result column="title" property="title"/>
+        <result column="content" property="content"/>
+        <result column="addtime" property="addtime"/>
+        <result column="viewnum" property="viewnum"/>
+        <result column="remarknum" property="remarknum"/>
+        <association property="user" javaType="User">
+            <result column="nickname" property="nickname"/>
+            <result column="avatar" property="avatar"/>
+        </association>
+        <association property="module" javaType="Module">
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+    <select id="queryByCondition" resultMap="queryByConditionMap">
+        select title,content,addtime,viewnum,remarknum,nickname,avatar,name
+        from main,user,module
+        where main.author=user.id and main.module=module.id
+        <if test="title!=null and title!=''">
+            and title like concat("%",#{title},"%")
+        </if>
+        <if test="nickname!=null and nickname!=''">
+            and nickname = #{nickname}
+        </if>
+        <if test="moduleName!=null and moduleName!=''">
+            and name = #{moduleName}
+        </if>
+        <if test="addTime1!=null and addTime1!=''">
+            and addtime &gt;= #{addTime1}
+        </if>
+        <if test="addTime2!=null and addTime2!=''">
+            and addtime &lt;= #{addTime2}
+        </if>
+    </select>
 </mapper>

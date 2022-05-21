@@ -10,8 +10,18 @@
         values (#{account},#{password},#{nickname},#{email},#{score},#{avatar},#{topicnums},#{replaynums},#{regtime},#{role})
     </insert>
 
-
-    <select id="queryById" resultType="User">
-        select * from User where id=#{id}
+    <resultMap id="userMainMap" type="com.bbs.entity.User">
+        <id column="id" property="id"/>
+        <result column="account" property="account"/>
+        <result column="nickname" property="nickname"/>
+        <result column="avatar" property="avatar"/>
+        <collection property="mainList" select="com.bbs.dao.MainDao.getByAuthor" column="id">
+            <result column="title" property="title"/>
+            <result column="content" property="content"/>
+            <result column="addtime" property="addtinme"/>
+        </collection>
+    </resultMap>
+    <select id="queryById" resultMap="userMainMap">
+        select id,account,nickname,avatar from User;
     </select>
 </mapper>
