@@ -52,6 +52,6 @@
     <mappers>
         <!--<mapper resource="com/woniumall/dao/CategoryDao.xml"/>-->
         <!--直接读取该包下的所有接口文件,xml文件的路径名和文件名必须与dao文件的路径名和接口名完全相同-->
-        <package name="com.woniumall.dao"/>
+        <package name="com.woniu.dao"/>
     </mappers>
 </configuration>

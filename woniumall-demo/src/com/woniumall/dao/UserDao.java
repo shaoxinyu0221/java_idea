@@ -7,6 +7,8 @@ public interface UserDao {
 
     User queryUserToLogin(@Param("account") String account, @Param("password") String password);
 
+    User queryUserByAccount(@Param("account") String account);
+
     Integer insert(User user);
 
     User queryById(Integer id);

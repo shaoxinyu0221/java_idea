@@ -2,35 +2,66 @@ package com.woniumall.service;
 
 import com.woniumall.dao.UserDao;
 import com.woniumall.entity.User;
+import com.woniumall.exception.AccountIsExist;
+import com.woniumall.exception.UserNoActive;
+import com.woniumall.exception.UserWasBanned;
+import com.woniumall.exception.UsernameOrPasswordEorrException;
 import com.woniumall.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
+import org.junit.jupiter.api.Test;
 
 import java.util.Scanner;
 
 public class UserService {
 
-    Scanner input = new Scanner(System.in);
 
     public static Integer userId = null;
 
-    public boolean login(){
-        boolean flag = false;
-        SqlSession sqlSession = MyBatisUtil.getSqlSession();
-        UserDao userDao = sqlSession.getMapper(UserDao.class);
-        System.out.println("请输入账号");
-        String account = input.next();
-        System.out.println("请输入密码");
-        String password = input.next();
-        User user = userDao.queryUserToLogin(account, password);
-        if(user == null){
-            flag = false;
-        }else {
-            flag = true;
-            userId = user.getId();
+    /**
+     * 登录方法
+     * @param account 账号
+     * @param password 密码
+     * @return 如果没有异常,返回一个用户对象
+     */
+    public User login(String account, String password){
+        try {
+            UserDao userDao = MyBatisUtil.getDao(UserDao.class);
+            User user = userDao.queryUserToLogin(account, password);
+            if(user == null){
+                throw new UsernameOrPasswordEorrException("用户名或密码输入错误");
+            }else if(user.getStatus().equals(User.UNABLE)){
+                throw new UserWasBanned("当前账号已经被ban");
+            }else if (user.getStatus().equals(User.UNACTIVE)){
+                throw new UserNoActive("当前用户未激活,请前往邮箱进行激活");
+            }else {
+                userId = user.getId();
+                return user;
+            }
+        } catch (Exception e) {
+            throw e;
         }
-        sqlSession.close();
-        return flag;
     }
+
+
+    /**
+     * 查找账号是否存在,为注册做铺垫
+     * @param account
+     * @return
+     */
+    public User queryUserByAccount(String account){
+        try {
+            UserDao userDao = MyBatisUtil.getDao(UserDao.class);
+            User user = userDao.queryUserByAccount(account);
+            if (user != null){
+                throw new AccountIsExist("当前账号已存在");
+            }else {
+                return user;
+            }
+        } catch (AccountIsExist e) {
+            throw e;
+        }
+    }
+
 
 
 }

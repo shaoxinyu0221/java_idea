@@ -3,6 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.woniumall.dao.CategoryDao">
+<!--开启二级缓存第二步-->
+    <cache />
 
     <insert id="insert">
         insert into mall_category(name, status) values(#{name}, #{status})

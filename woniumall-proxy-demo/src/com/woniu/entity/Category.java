@@ -1,4 +1,4 @@
-package com.woniumall.entity;
+package com.woniu.entity;
 
 import java.io.Serializable;
 

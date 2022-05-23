@@ -17,8 +17,9 @@
                 content = #{content},
             </if>
             <if test="main!=null and main!=''">
-
+                main = #{main},
             </if>
+            <if test=""></if>
         </set>
     </update>
 </mapper>

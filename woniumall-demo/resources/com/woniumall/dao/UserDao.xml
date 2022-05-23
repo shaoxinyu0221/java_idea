@@ -34,4 +34,9 @@
         select ms.account from mall_user ms where id=#{userId}
     </select>
 
+
+    <select id="queryUserByAccount" resultType="com.woniumall.entity.User">
+        select * from mall_user where account=#{account}
+    </select>
+
 </mapper>
