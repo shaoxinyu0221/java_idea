@@ -14,9 +14,14 @@ public class TestUserService {
     @Test
     public void testLogin(){
 
-        UserServiceImpl userService = new UserServiceImpl();
-        UserService proxy = ServiceProxyFactory.getProxy(userService);
-        proxy.login("admin", "123456");
+        try {
+            UserServiceImpl userService = new UserServiceImpl();
+            UserService proxy = ServiceProxyFactory.getProxy(userService);
+            proxy.login("admin", "123456");
+        } catch (Exception e) {
+            System.out.println(e.getCause().getCause().getMessage());
+            e.printStackTrace();
+        }
     }
 
 

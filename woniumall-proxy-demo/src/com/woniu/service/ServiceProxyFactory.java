@@ -22,13 +22,7 @@ public class ServiceProxyFactory {
                             method.invoke(t,args);
                             MyBatisUtil.getSqlSession().commit();
                         } catch (Exception e) {
-                            MyBatisUtil.getSqlSession().rollback();
-                            if(e.getCause() instanceof MyServiceException){
-                                System.out.println(e.getCause().getMessage());
-                            }else {
-                                e.printStackTrace();
-                                System.out.println("服务器繁忙,请稍后重试");
-                            }
+                            throw e;
                         }finally {
                             MyBatisUtil.getSqlSession().close();
                         }

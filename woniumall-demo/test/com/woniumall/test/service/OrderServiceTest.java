@@ -3,6 +3,7 @@ package com.woniumall.test.service;
 import com.woniumall.entity.Order;
 import com.woniumall.entity.OrderItem;
 import com.woniumall.service.OrderService;
+import com.woniumall.service.ServiceProxyFactory;
 import com.woniumall.service.UserService;
 import org.junit.Test;
 
@@ -16,7 +17,7 @@ public class OrderServiceTest {
      */
     @Test
     public void testInsertOrder(){
-        OrderService orderService = new OrderService();
+        OrderService proxy = ServiceProxyFactory.getProxy(new OrderService());
 
         //创建订单对象模拟传参
         Order order = new Order();
@@ -36,8 +37,14 @@ public class OrderServiceTest {
 
         List<OrderItem> orderItems = Arrays.asList(item1, item2);
 
-        //调用业务层代码
-        orderService.add(order,orderItems);
+        try {
+            //调用业务层代码
+            proxy.add(order,orderItems);
+            System.out.println("下单成功");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
 
     }
 

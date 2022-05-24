@@ -24,44 +24,37 @@ public class UserService {
      * @return 如果没有异常,返回一个用户对象
      */
     public User login(String account, String password){
-        try {
-            UserDao userDao = MyBatisUtil.getDao(UserDao.class);
-            User user = userDao.queryUserToLogin(account, password);
-            if(user == null){
-                throw new UsernameOrPasswordEorrException("用户名或密码输入错误");
-            }else if(user.getStatus().equals(User.UNABLE)){
-                throw new UserWasBanned("当前账号已经被ban");
-            }else if (user.getStatus().equals(User.UNACTIVE)){
-                throw new UserNoActive("当前用户未激活,请前往邮箱进行激活");
-            }else {
-                userId = user.getId();
-                return user;
-            }
-        } catch (Exception e) {
-            throw e;
+        UserDao userDao = MyBatisUtil.getDao(UserDao.class);
+        User user = userDao.queryUserToLogin(account, password);
+        if(user == null){
+            throw new UsernameOrPasswordEorrException("用户名或密码输入错误");
+        }else if(user.getStatus().equals(User.UNABLE)){
+            throw new UserWasBanned("当前账号已经被ban");
+        }else if (user.getStatus().equals(User.UNACTIVE)){
+            throw new UserNoActive("当前用户未激活,请前往邮箱进行激活");
+        }else {
+            userId = user.getId();
+            return user;
         }
     }
 
 
     /**
      * 查找账号是否存在,为注册做铺垫
-     * @param account
+     * @param user
      * @return
      */
-    public User queryUserByAccount(String account){
-        try {
-            UserDao userDao = MyBatisUtil.getDao(UserDao.class);
-            User user = userDao.queryUserByAccount(account);
-            if (user != null){
-                throw new AccountIsExist("当前账号已存在");
-            }else {
-                return user;
-            }
-        } catch (AccountIsExist e) {
-            throw e;
-        }
-    }
+    public void register(User user){
 
+        UserDao userDao = MyBatisUtil.getDao(UserDao.class);
+        userDao.queryUserByAccount(user.getAccount());
+        if (user != null){
+            throw new AccountIsExist("当前账号已存在");
+        }else {
+            Integer insert = userDao.insert(user);
+        }
+
+    }
 
 
 }
