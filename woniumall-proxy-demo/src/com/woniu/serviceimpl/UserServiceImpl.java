@@ -14,7 +14,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void login(String account, String password) {
-        try {
             UserDao userDao = MyBatisUtil.getDao(UserDao.class);
             User user = userDao.queryUserToLogin(account, password);
             if (user==null){
@@ -24,28 +23,21 @@ public class UserServiceImpl implements UserService {
             }else if(user.getStatus().equals(User.UNACTIVE)){
                 throw new UserNoActive("该账号还未激活,请及时通过邮件激活");
             }else{
-
+                System.out.println("登录成功");
             }
-        } catch (Exception e) {
-            throw e;
-        }
     }
 
     @Override
     public void register(User user) {
         SqlSession sqlSession = MyBatisUtil.getSqlSession();
-        try {
             UserDao userDao = sqlSession.getMapper(UserDao.class);
             User user1 = userDao.queryUserByAccount(user.getAccount());
             if (user1 != null){
                 throw new AccountIsExist("账号已存在,请重新输入");
             }else {
                 userDao.insertUserToReg(user);
+                System.out.println("注册成功");
             }
-            sqlSession.commit();
-        } catch (Exception e) {
-            sqlSession.rollback();
-            throw e;
-        }
+
     }
 }
