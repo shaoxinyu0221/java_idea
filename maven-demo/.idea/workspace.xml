@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7a71a737-5be3-4bc4-ae03-29f31de93370" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/dao/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/exceptions/MyException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/ServiceProxyFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/servlet/NewServelet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/demo/util/MyBatisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/demo/dao/UserDao.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/db.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/LoginSuccess.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/lib/mybatis-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/resources/com/bbs/dao/MainDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/resources/com/bbs/dao/ModuleDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/resources/com/bbs/dao/UserDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/resources/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/dao/MainDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/dao/ModuleDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/entity/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/entity/Module.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/entity/Remark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/service/ModuleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/util/BBSUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/src/com/bbs/util/MyBatisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/test/com/bbs/test/dao/MainDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/test/com/bbs/test/dao/ModuleDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/test/com/bbs/test/dao/UserDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BBS-demo/test/com/bbs/test/service/ModuleServiceTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/Day01_Mybatis_base.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/lib/mybatis-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/resources/mybaties-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/dao/BookDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/dao/BookDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/dao/UserDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/entity/Book.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/main/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/main/Demo_01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/main/Demo_02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/main/MyBatisSelect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/main/Mybatis_CUD.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/service/BookService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Day01_Mybatis_base/src/com/shaoxinyu/util/MybatisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Java/src/com/shaoxinyu/Exercise/TsetGeneric.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Java/src/com/shaoxinyu/lesson01/GenericMethod.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Java/src/com/shaoxinyu/lesson01/MyArraysList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Java/src/com/shaoxinyu/lesson01/TestAnimal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Java/src/com/shaoxinyu/lesson01/TestSelect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/Generic-Reflection-Homework.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/DemoClass.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo01/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo01/ReflectionExercise.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo03/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo03/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo03/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo04/DemoClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Generic-Reflection-Homework/src/com/shaoxinyu/demo04/DemoTest04.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/lib/mybatis-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/resources/com/product/dao/CartDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/resources/com/product/dao/ProductDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/resources/com/product/dao/UserDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/dao/CartDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/entity/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/entity/Product.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/service/CartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ProductSystem/src/com/product/util/MyBatisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/resources/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/homework/home01/Demo01.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/homework/home01/DemoClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/homework/home03/Demo03.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/shaoxinyu/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/shaoxinyu/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/shaoxinyu/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflect-Jdbc/src/com/shaoxinyu/util/JdbcUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/DemoClass.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/EnertySetMap.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/TestSelect.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo01/Animal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo01/ReflectTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo01/Test02.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo02/DemoClass.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo02/DemoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo03/Demo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo03/DemoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Reflection/src/com/shaoxinyu/demo04/TestList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/jdbc_demo.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/lib/druid-1.2.4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/src/com/shaoxinyu/dao/BookJdbc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/src/com/shaoxinyu/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/src/com/shaoxinyu/lesson01/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/src/com/shaoxinyu/util/JdbcUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../jdbc_demo/src/druid.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/lib/logback-classic-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/lib/logback-core-1.2.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/lib/mybatis-3.4.6.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/lib/mysql-connector-java-8.0.19.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/lib/slf4j-api-1.7.30.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/CartDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/CategoryDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/GoodsDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/OrderDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/OrderItemDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/com/woniumall/dao/UserDao.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/logback.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/resources/mybatis-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/CartDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/CategoryDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/GoodsDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/OrderDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/OrderItemDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/dao/UserDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Admin.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Cart.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Category.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Goods.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Order.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/OrderItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/Remark.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/entity/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/service/OrderService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/util/MallUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/src/com/woniumall/util/MyBatisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/CartDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/CategoryDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/GoodsDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/OrderDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/OrderItemDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/dao/UserDaoTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../woniumall-demo/test/com/woniumall/test/service/OrderServiceTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="Jsp File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="/usr/local/apache-maven-3.8.5" />
+        <option name="userSettingsFile" value="/usr/local/apache-maven-3.8.5/conf/settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="29kM8iS7RsLDpSM8F7O1Yj4JS7x" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "configurable.group.tools"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="maven-demo [tomcat9:run]" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="tomcat9:run" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7a71a737-5be3-4bc4-ae03-29f31de93370" name="Changes" comment="" />
+      <created>1653652473103</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653652473103</updated>
+      <workItem from="1653652474257" duration="10681000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
