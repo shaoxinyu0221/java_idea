@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.dao.UsersDao">
+
+
+    <resultMap id="usersMap" type="Users">
+        <result column="username" property="username"/>
+        <result column="sex" property="sex"/>
+        <result column="address" property="address"/>
+        <result column="money" property="money"/>
+        <result column="birthday" property="birthday"/>
+        <collection property="infoList" ofType="AccountInfo">
+            <result column="account" property="account"/>
+            <result column="password" property="password"/>
+        </collection>
+    </resultMap>
+    <select id="getById" resultMap="usersMap">
+        select username,sex,address,money,birthday,account,password
+        from users,accountinfo where users.id=accountinfo.userid
+        and users.id=#{id}
+    </select>
+
+
+    <select id="getByCondition" resultMap="usersMap">
+        select username,sex,address,money,birthday,account,password
+        from users,accountinfo where users.id=accountinfo.userid
+        <if test="username!=null and username!=''">
+            and username like concat("%", #{username} ,"%")
+        </if>
+        <if test="sex!=null and sex!=''">
+            and sex = #{sex}
+        </if>
+        <if test="address!=null and address!=''">
+            and address like concat("%", #{address} ,"%")
+        </if>
+        <if test="money!=null and money!=''">
+            and money = #{money}
+        </if>
+    </select>
+
+
+    <insert id="addUerByForeach">
+        insert into users(username, sex, address, money, birthday) values
+        <foreach collection="list" item="user" separator=",">
+            (#{user.username},#{user.sex},#{user.address},#{user.money},#{user.birthday})
+        </foreach>
+    </insert>
+
+
+    <update id="updateUserInfo">
+        update users
+        <set>
+            <if test="username!=null and username!=''">
+                username = #{username},
+            </if>
+            <if test="sex!=null and sex!=''">
+                sex = #{sex},
+            </if>
+            <if test="address!=null and address!=''">
+                address = #{address},
+            </if>
+            <if test="money!=null and money!=''">
+                money = #{money},
+            </if>
+            <if test="birthday!=null and birthday!=''">
+                birthday = #{birthday}
+            </if>
+        </set>
+        where id=#{id}
+    </update>
+
+
+    <delete id="deleteUserByForeach">
+        delete from users where id in
+        <foreach collection="array" item="id" open="(" close=")" separator=",">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

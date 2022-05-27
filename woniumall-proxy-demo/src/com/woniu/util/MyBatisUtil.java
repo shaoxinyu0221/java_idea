@@ -1,4 +1,4 @@
-package com.woniumall.util;
+package com.woniu.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;

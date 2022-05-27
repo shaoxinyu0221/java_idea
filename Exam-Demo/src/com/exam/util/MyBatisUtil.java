@@ -1,4 +1,4 @@
-package com.woniumall.util;
+package com.exam.util;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -12,9 +12,9 @@ public class MyBatisUtil {
 
     private static SqlSessionFactory factory = null;
     private static ThreadLocal<SqlSession> threadLocal = new ThreadLocal<>();
+
     static {
-        try {
-            InputStream input = Resources.getResourceAsStream("mybatis-config.xml");
+        try(InputStream input = Resources.getResourceAsStream("mybatis-config.xml");) {
             SqlSessionFactoryBuilder builder = new SqlSessionFactoryBuilder();
             factory = builder.build(input);
         } catch (IOException e) {
@@ -23,8 +23,8 @@ public class MyBatisUtil {
     }
 
     /**
-     * 获取SQLSession对象
-     * @return 返回一个SQLSession对象
+     * 获取一个SQLSession对象
+     * @return 返回一个sqlsession
      */
     public static SqlSession getSqlSession(){
         SqlSession sqlSession = threadLocal.get();
@@ -35,9 +35,9 @@ public class MyBatisUtil {
         return sqlSession;
     }
 
-
     /**
      * 关闭SQLSession
+     * @param sqlSession 要关闭的sqlsession对象
      */
     public static void close(SqlSession sqlSession){
         if(sqlSession != null){
@@ -47,13 +47,6 @@ public class MyBatisUtil {
     }
 
 
-    /**
-     * 直接获取dao类对象
-     * @param clazz
-     * @param <T>
-     * @return
-     */
-    public static<T> T getDao(Class<T> clazz){
-        return getSqlSession().getMapper(clazz);
-    }
+
+
 }
