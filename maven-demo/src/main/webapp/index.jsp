@@ -9,6 +9,7 @@
         <input type="text" name="username" id="username" placeholder="请输入用户名" /><br>
         <input type="password" name="password" id="password" placeholder="请输入密码" /><br>
         <input type="submit" value="登录" />
+        <input type="button" value="注册" onclick="window.open('http://localhost/maven-demo/register.jsp')" />
         <span style="color:red" id="loginError">
             <%=request.getAttribute("error")%>
         </span>

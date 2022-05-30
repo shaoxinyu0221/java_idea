@@ -34,7 +34,7 @@
 -->
     <typeAliases>
         <!--为该包下的所有类取别名,别名默认为类名-->
-        <package name="com.woniumall.entity"/>
+        <package name="com.demo.entity"/>
     </typeAliases>
 
     <environments default="development">
@@ -52,6 +52,6 @@
     <mappers>
         <!--<mapper resource="com/woniumall/dao/CategoryDao.xml"/>-->
         <!--直接读取该包下的所有接口文件,xml文件的路径名和文件名必须与dao文件的路径名和接口名完全相同-->
-        <package name="com.woniumall.dao"/>
+        <package name="com.demo.dao"/>
     </mappers>
 </configuration>

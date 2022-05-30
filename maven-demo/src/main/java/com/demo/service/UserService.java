@@ -5,6 +5,7 @@ import com.demo.entity.User;
 import com.demo.exceptions.MyException;
 import com.demo.util.MyBatisUtil;
 
+
 import java.util.List;
 
 public class UserService {
@@ -30,4 +31,21 @@ public class UserService {
         List<User> users = userDao.queryUserList();
         return users;
     }
+
+
+    public void register(User user) {
+        UserDao userDao = MyBatisUtil.getSqlSession().getMapper(UserDao.class);
+
+        User user1 = userDao.queryUserByName(user.getUsername());
+        if (user1 != null) {
+            throw new MyException("用户名已存在");
+        }
+        Integer integer = userDao.registerUser(user);
+        if (integer == 0){
+            throw new MyException("注册失败");
+        }
+
+
+    }
+
 }

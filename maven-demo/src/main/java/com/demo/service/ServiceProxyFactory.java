@@ -1,6 +1,6 @@
-package com.woniumall.service;
+package com.demo.service;
 
-import com.woniumall.util.MyBatisUtil;
+import com.demo.util.MyBatisUtil;
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
@@ -27,7 +27,7 @@ public class ServiceProxyFactory {
                 } catch (Exception e) {
                    throw e;
                 }finally {
-                    MyBatisUtil.getSqlSession().close();
+
                 }
                 return returnVal;
             }
@@ -37,13 +37,6 @@ public class ServiceProxyFactory {
     }
 
 
-    public static<T> T getProxy02(T t){
-        //创建enhancer对象
-        Enhancer enhancer = new Enhancer();
-        //设置对象
-
-
-    }
 
 
 

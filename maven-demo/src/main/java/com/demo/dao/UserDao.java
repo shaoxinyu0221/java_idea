@@ -10,4 +10,8 @@ public interface UserDao {
     User queryUserToLogin(@Param("username") String username, @Param("password") String password);
 
     List<User> queryUserList();
+
+    User queryUserByName(@Param("username") String username);
+
+    Integer registerUser(User user);
 }

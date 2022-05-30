@@ -1,6 +1,8 @@
 <%@ page import="com.demo.entity.User" %>
 <%@ page import="com.demo.service.UserService" %>
-<%@ page import="java.util.List" %><%--
+<%@ page import="java.util.List" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%--
   Created by IntelliJ IDEA.
   User: shaoxinyu
   Date: 2022/5/27
@@ -14,7 +16,10 @@
 </head>
 <body>
     <h1>登录成功</h1>
-    <%! List<User> users = UserService.getUsers(); %>
+    <%
+        List<User> users = UserService.getUsers();
+        request.setAttribute("users",users);
+    %>
     <table>
         <tr>
             <td>编号</td>
@@ -23,15 +28,16 @@
             <td>年龄</td>
             <td>性别</td>
         </tr>
-        <% for (User user : users) {%>
-        <tr>
-            <td><%= user.getId() %></td>
-            <td><%= user.getUsername() %></td>
-            <td><%= user.getPassword() %></td>
-            <td><%= user.getAge() %></td>
-            <td><%= user.getSex() %></td>
-        </tr>
-        <% } %>
+        <c:forEach var="user" items="${users}">
+            <tr>
+                <td>${user.id}</td>
+                <td>${user.username}</td>
+                <td>${user.password}</td>
+                <td>${user.age}</td>
+                <td>${user.sex}</td>
+            </tr>
+        </c:forEach>
+
     </table>
 </body>
 </html>
