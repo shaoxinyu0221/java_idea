@@ -7,7 +7,6 @@ import com.woniumall.dao.UserDao;
 import com.woniumall.entity.Goods;
 import com.woniumall.entity.Order;
 import com.woniumall.entity.OrderItem;
-import com.woniumall.entity.User;
 import com.woniumall.util.MallUtil;
 import com.woniumall.util.MyBatisUtil;
 import org.apache.ibatis.session.SqlSession;
@@ -63,7 +62,6 @@ public class OrderService {
         Integer score = (totalMoney.intValue()) / 10;
         //设置用户积分
         userDao.updateScoreById(order.getUserid(),score);
-
 
     }
 
